@@ -7,7 +7,7 @@ The paper has been accepted by **WACV 2025, MAR@CVPR 2025**.
 Visual recognition in a low-data regime is challenging and often prone to overfitting. To mitigate this issue, several data augmentation strategies have been proposed. However, standard transformations, e.g., rotation, cropping, and flip- ping provide limited semantic variations. To this end, we propose Cap2Aug, an image-to-image diffusion model-based data augmentation strategy using image captions to condi- tion the image synthesis step. We generate a caption for an image and use this caption as an additional input for an image-to-image diffusion model. This increases the semantic diversity of the augmented images due to caption condition- ing compared to the usual data augmentation techniques. We show that Cap2Aug is particularly effective where only a few samples are available for an object class. However, naively generating the synthetic images is not adequate due to the domain gap between real and synthetic images. Thus, we employ a maximum mean discrepancy loss to align the synthetic images to the real images to minimize the domain gap. We evaluate our method on few-shot classification and image classification with long-tail class distribution tasks. Cap2Aug achieves state-of-the-art performance on both tasks while evaluated on eleven benchmarks. 
 
 <div align="center">
-  <img width=500 src="cvpr25_poster_Cap2Aug.pdf"/>
+  <img width=500 src="cap2aug.png"/>
 </div>
 
 ## Requirements
@@ -15,9 +15,10 @@ Visual recognition in a low-data regime is challenging and often prone to overfi
 Create a conda environment and install dependencies:
 ```bash
 git clone https://github.com/aniket004/Cap_2_Aug.git
-cd Tip-Adapter
+cd Cap_2_Aug
 
 conda create --name Cap2Aug --file requirements.txt
+```
 
 ### Dataset
 Follow [DATASET.md](https://github.com/gaopengcuhk/Tip-Adapter/blob/main/DATASET.md) to install ImageNet and other 10 datasets referring to CoOp.
