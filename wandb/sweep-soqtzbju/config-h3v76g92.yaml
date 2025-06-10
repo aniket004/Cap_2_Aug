@@ -1,0 +1,10 @@
+wandb_version: 1
+
+config:
+  value: configs/dtd.yaml
+init_alpha:
+  value: 2
+is_baseline:
+  value: true
+shots:
+  value: 2

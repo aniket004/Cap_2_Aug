@@ -1,0 +1,12 @@
+wandb_version: 1
+
+config:
+  value: configs/oxford_flowers.yaml
+mmd_coeff:
+  value: 0.1
+shots:
+  value: 16
+train_batchsize:
+  value: 64
+use_mmd:
+  value: true

@@ -1,0 +1,109 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.13.10
+    framework: huggingface
+    huggingface_version: 4.27.0.dev0
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.10.6
+    start_time: 1678114704.083102
+    t:
+      1:
+      - 1
+      - 5
+      - 11
+      - 41
+      - 49
+      - 51
+      - 53
+      - 55
+      - 71
+      2:
+      - 1
+      - 5
+      - 11
+      - 41
+      - 49
+      - 51
+      - 53
+      - 55
+      - 71
+      3:
+      - 16
+      - 23
+      - 37
+      4: 3.10.6
+      5: 0.13.10
+      6: 4.27.0.dev0
+      8:
+      - 5
+augment_epoch:
+  desc: null
+  value: 10
+backbone:
+  desc: null
+  value: RN50
+cache_dir:
+  desc: null
+  value: ./caches/stanford_cars
+cache_syn:
+  desc: null
+  value: 'True'
+config:
+  desc: null
+  value: configs/stanford_cars.yaml
+dataset:
+  desc: null
+  value: stanford_cars
+init_alpha:
+  desc: null
+  value: 3
+init_beta:
+  desc: null
+  value: 1
+load_cache:
+  desc: null
+  value: false
+load_pre_feat:
+  desc: null
+  value: false
+lr:
+  desc: null
+  value: 0.001
+mmd_coeff:
+  desc: null
+  value: 0
+root_path:
+  desc: null
+  value: ./DATA
+search_hp:
+  desc: null
+  value: true
+search_scale:
+  desc: null
+  value:
+  - 20
+  - 10
+search_step:
+  desc: null
+  value:
+  - 200
+  - 20
+shots:
+  desc: null
+  value: 2
+strength:
+  desc: null
+  value: 0.5
+train_batchsize:
+  desc: null
+  value: 128
+train_epoch:
+  desc: null
+  value: 20
+use_mmd:
+  desc: null
+  value: true

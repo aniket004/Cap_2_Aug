@@ -1,5 +1,5 @@
 # ------ root_path/dataset_name ------
-root_path: ''
+root_path: './DATA'
 
 
 # ------ Load Cache and Features ------
@@ -23,7 +23,7 @@ init_alpha: 3
 
 # ------ Basic Config ------
 dataset: 'caltech101'
-shots: 16
+shots: 1
 backbone: 'RN50'
 
 lr: 0.001

@@ -1,0 +1,14 @@
+wandb_version: 1
+
+cache_syn:
+  value: 'False'
+config:
+  value: configs/food101.yaml
+mmd_coeff:
+  value: 0.1
+shots:
+  value: 8
+train_batchsize:
+  value: 128
+use_mmd:
+  value: true

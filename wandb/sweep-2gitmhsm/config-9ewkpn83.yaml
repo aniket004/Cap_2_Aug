@@ -1,0 +1,10 @@
+wandb_version: 1
+
+config:
+  value: configs/caltech101.yaml
+mmd_coeff:
+  value: 0
+shots:
+  value: 2
+use_mmd:
+  value: true

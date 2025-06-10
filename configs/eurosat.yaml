@@ -1,6 +1,6 @@
 # ------ root_path/dataset_name ------
-root_path: ''
-
+root_path: './DATA'
+#root_path: './merged_DATA'
 
 # ------ Load Cache and Features ------
 load_cache: False
@@ -12,7 +12,7 @@ load_pre_feat: False
 
 # ------ Hyperparamters ------
 search_hp: True
-# search_hp: False
+#search_hp: False
 
 search_scale: [12, 10]
 search_step: [200, 20]
@@ -23,9 +23,11 @@ init_alpha: 2
 
 # ------ Basic Config ------
 dataset: 'eurosat'
-shots: 16
+shots: 2
 backbone: 'RN50'
 
 lr: 0.001
 augment_epoch: 10
 train_epoch: 100
+
+mode: 'baseline'

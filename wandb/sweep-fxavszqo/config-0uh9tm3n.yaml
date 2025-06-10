@@ -1,0 +1,12 @@
+wandb_version: 1
+
+cache_syn:
+  value: false
+config:
+  value: configs/oxford_pets.yaml
+mmd_coeff:
+  value: 0
+shots:
+  value: 16
+use_mmd:
+  value: true

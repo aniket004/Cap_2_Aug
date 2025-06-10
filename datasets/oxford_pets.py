@@ -15,18 +15,31 @@ class OxfordPets(DatasetBase):
 
     dataset_dir = 'oxford_pets'
 
-    def __init__(self, root, num_shots):
+    def __init__(self, root, num_shots, is_syn):
         self.dataset_dir = os.path.join(root, self.dataset_dir)
         self.image_dir = os.path.join(self.dataset_dir, 'images')
         self.anno_dir = os.path.join(self.dataset_dir, 'annotations')
         self.split_path = os.path.join(self.dataset_dir, 'split_zhou_OxfordPets.json')
+        self.is_syn = is_syn
 
         self.template = template
 
         train, val, test = self.read_split(self.split_path, self.image_dir)
         train = self.generate_fewshot_dataset(train, num_shots=num_shots)
 
-        super().__init__(train_x=train, val=val, test=test)
+        if self.is_syn:
+            # add the syn data path (captions as prompt img2img contrast, 25 images per class)
+            self.syn_dir = os.path.join(self.dataset_dir, f'Syn_img2img_caption_contrast_{num_shots}')
+            self.syn_split_path = os.path.join(self.dataset_dir, f'Syn_img2img_caption_contrast_{num_shots}_oxford_pets.json')
+
+            # add syn data (captions as prompt, img2img 10 images per class)
+            syn_split = read_json(self.dataset_dir + '/' + f'Syn_img2img_caption_contrast_{num_shots}_oxford_pets.json')
+            train_syn = self._convert(syn_split['train'], '/cis/home/aroy/code/Tip-Adapter/DATA/oxford_pets/')
+
+        else:
+            train_syn = None 
+
+        super().__init__(train_x=train, val=val, test=test, train_u=train_syn)
     
     def read_data(self, split_file):
         filepath = os.path.join(self.anno_dir, split_file)
@@ -123,3 +136,16 @@ class OxfordPets(DatasetBase):
         test = _convert(split['test'])
 
         return train, val, test
+
+    def _convert(self, items, path_prefix):
+        out = []
+        #breakpoint()
+        for impath, label, classname in items:
+            impath = os.path.join(path_prefix, impath)
+            item = Datum(
+                impath=impath,
+                label=int(label),
+                classname=classname
+            )
+            out.append(item)
+        return out

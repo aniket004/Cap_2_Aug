@@ -1,5 +1,8 @@
 # ------ root_path/dataset_name ------
-root_path: ''
+#root_path: '/cis/net/io76a/data/aroy/imagenet/ILSVRC/Data'
+#root_path: '/cis/net/io74a/data/ashah/datasets/imagenet/ILSVRC/Data'
+#root_path: '/cis/net/io65a/data/ashah/Datasets/Imagenet/ILSVRC/Data'
+root_path: '/cis/net/io91/data/aroy/imagenet/ILSVRC/Data'
 
 
 # ------ Load Cache and Features ------
@@ -23,7 +26,7 @@ init_alpha: 1.17
 
 # ------ Basic Config ------
 dataset: 'imagenet'
-shots: 16
+shots: 4
 backbone: 'RN50'
 
 lr: 0.001

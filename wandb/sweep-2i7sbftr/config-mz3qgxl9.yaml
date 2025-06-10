@@ -1,0 +1,10 @@
+wandb_version: 1
+
+config:
+  value: configs/oxford_flowers.yaml
+init_alpha:
+  value: 3
+lr:
+  value: 0.005
+shots:
+  value: 16

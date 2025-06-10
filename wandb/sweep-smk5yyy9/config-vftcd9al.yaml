@@ -1,0 +1,10 @@
+wandb_version: 1
+
+config:
+  value: configs/eurosat.yaml
+init_alpha:
+  value: 1.17
+lr:
+  value: 0.005
+shots:
+  value: 2

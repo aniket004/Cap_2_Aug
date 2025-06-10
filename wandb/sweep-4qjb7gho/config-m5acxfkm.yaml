@@ -1,0 +1,10 @@
+wandb_version: 1
+
+config:
+  value: configs/oxford_pets.yaml
+mmd_coeff:
+  value: 1
+shots:
+  value: 8
+use_mmd:
+  value: true

@@ -1,0 +1,10 @@
+wandb_version: 1
+
+config:
+  value: configs/stanford_cars.yaml
+init_alpha:
+  value: 2
+lr:
+  value: 0.001
+shots:
+  value: 16
